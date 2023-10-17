@@ -1,33 +1,35 @@
 <template>
   <main class="layout">
-    <header class="layout__header">
+    <!-- <header class="layout__header">
       <slot name="header"></slot>
-    </header>
+    </header> -->
+    <Header />
     <aside class="layout__aside">
       <slot name="aside"></slot>
     </aside>
     <article class="layout__article">
-      <slot></slot>
+      <NuxtPage />
     </article>
-    <footer class="layout__footer">
+    <!-- <footer class="layout__footer">
       <slot name="footer"></slot>
-    </footer>
+    </footer> -->
+    <Footer />
   </main>
 </template>
 <style lang="scss" scoped>
 .layout {
   display: grid;
   grid-template:
-    'header'
-    'article'
-    'aside'
-    'footer';
+    "header"
+    "article"
+    "aside"
+    "footer";
 
   @include medium-up {
     grid-template:
-      'header header header'
-      'article article aside'
-      'footer footer footer';
+      "header header header"
+      "article article aside"
+      "footer footer footer";
   }
 
   > * {
