@@ -7,7 +7,7 @@ const store = useGlobalStore();
 <template>
   <header class="c-header">Le header</header>
   <div class="c-header__count" @click="store.increment()">
-    {{ store.count }} // {{ store.foo }}
+    {{ store.cart }}
   </div>
 </template>
 

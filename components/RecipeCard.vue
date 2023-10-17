@@ -5,6 +5,8 @@ defineProps({
   description: String,
   image: String,
 });
+
+const store = useGlobalStore();
 </script>
 
 <template>
@@ -17,8 +19,11 @@ defineProps({
       <p class="c-recipe-card__title">{{ title }}</p>
       <p class="c-recipe-card__description">{{ description }}</p>
       <RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink>
-      <div class="c-recipe-card__button" @click="storeToRefs.addToCart(id)">
+      <div class="c-recipe-card__button" @click="store.addToCart(id)">
         Add to cart
+      </div>
+      <div class="c-recipe-card__button" @click="store.removeFromCart(id)">
+        Remove from cart
       </div>
     </div>
   </div>
