@@ -24,6 +24,7 @@
     "article"
     "aside"
     "footer";
+  padding-top: 80px;
 
   @include medium-up {
     grid-template:

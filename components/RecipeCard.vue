@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   id: Number,
   title: String,
   description: String,
@@ -7,6 +7,23 @@ defineProps({
 });
 
 const store = useGlobalStore();
+
+// Méthode 1
+// const isAlreadyInCart = (id) => {
+//   return store.cart.includes(id);
+// };
+
+// Méthode 2 (avec computed)
+const buttonLabel = computed(() =>
+  store.isInCart(props.id) ? "Remove from cart" : "Add to cart"
+);
+const onClick = () => {
+  if (store.isInCart(props.id)) {
+    store.removeFromCart(props.id);
+  } else {
+    store.addToCart(props.id);
+  }
+};
 </script>
 
 <template>
@@ -19,11 +36,26 @@ const store = useGlobalStore();
       <p class="c-recipe-card__title">{{ title }}</p>
       <p class="c-recipe-card__description">{{ description }}</p>
       <RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink>
-      <div class="c-recipe-card__button" @click="store.addToCart(id)">
+
+      <!-- Méthode 1
+        <div
+        v-if="!isAlreadyInCart(id)"
+        class="c-recipe-card__button"
+        @click="store.addToCart(id)"
+      >
         Add to cart
       </div>
-      <div class="c-recipe-card__button" @click="store.removeFromCart(id)">
+      <div
+        v-else
+        class="c-recipe-card__button"
+        @click="store.removeFromCart(id)"
+      >
         Remove from cart
+      </div> -->
+
+      <!-- Méthode 2 -->
+      <div class="c-recipe-card__button" @click="onClick(id)">
+        {{ buttonLabel }}
       </div>
     </div>
   </div>

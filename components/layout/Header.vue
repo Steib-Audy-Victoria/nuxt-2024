@@ -13,6 +13,12 @@ const store = useGlobalStore();
 
 <style lang="scss">
 .c-header {
+  position: fixed;
+  padding: 20px;
+  background-color: orange;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
