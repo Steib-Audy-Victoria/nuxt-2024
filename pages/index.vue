@@ -22,18 +22,17 @@ if (!home.value || error.value) {
 
 <template>
   <div class="p-index">
-    <p>Page d'accueil</p>
-    <!-- <RecipeCard
-      v-bind="{ title: 'Titre de la recette', description: 'une description' }"
-    /> -->
-    <!-- <prismic-rich-text class="p-index__content" :field="home.data.hero_title" /> -->
+    <!--Section Hero-->
     <Hero
       :title="home.data.hero_title"
       :text="home.data.hero_text"
       :buttons="home.data.hero_buttons"
     />
+
+    <!--Section Information-->
     <Information :information="home.data.information" />
 
+    <!--Section Recipes-->
     <div class="p-index__recipes">
       <div class="p-index__recipe" v-for="recipe in recipes">
         <RecipeCard

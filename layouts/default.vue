@@ -1,19 +1,18 @@
 <template>
   <main class="layout">
-    <!-- <header class="layout__header">
-      <slot name="header"></slot>
-    </header> -->
-    <Header />
+    <div class="layout__header">
+      <MyHeader />
+    </div>
     <aside class="layout__aside">
       <slot name="aside"></slot>
     </aside>
     <article class="layout__article">
       <NuxtPage />
     </article>
-    <!-- <footer class="layout__footer">
-      <slot name="footer"></slot>
-    </footer> -->
-    <Footer />
+
+    <div class="layout__footer">
+      <MyFooter />
+    </div>
   </main>
 </template>
 <style lang="scss" scoped>
@@ -43,11 +42,9 @@
     grid-area: aside;
   }
   &__footer {
-    background: $primary-color;
     grid-area: footer;
   }
   &__header {
-    background: $primary-color;
     grid-area: header;
   }
 }
