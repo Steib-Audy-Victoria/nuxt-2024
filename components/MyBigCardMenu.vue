@@ -2,7 +2,8 @@
 import MyButton from "./elements/MyButton.vue";
 import MyIconGlobale from "./elements/MyIconGlobale.vue";
 
-defineProps({
+const props = defineProps({
+  id: Number,
   imageAlt: String,
   imageSrc: String,
   title: String,
@@ -11,10 +12,19 @@ defineProps({
   price: Number,
 });
 
-function name() {
-  return "coucou";
-}
-name();
+const store = useGlobalStore();
+
+// Méthode 2 (avec computed)
+const buttonLabel = computed(() =>
+  store.isInCart(props.id) ? "Remove from cart" : "Add to cart"
+);
+const onClick = () => {
+  if (store.isInCart(props.id)) {
+    store.removeFromCart(props.id);
+  } else {
+    store.addToCart(props.id);
+  }
+};
 </script>
 <template>
   <div class="BcardMenu">
@@ -38,8 +48,8 @@ name();
       </div>
 
       <div class="BcardMenu__row2">
-        <div class="BcardMenu__button">
-          <MyButton variant="rounded" size="small">{{ buttonLabel }}</MyButton>
+        <div class="BcardMenu__button" @click="onClick(id)">
+          {{ buttonLabel }}
         </div>
         <p><span>$</span>{{ price }}</p>
       </div>
@@ -87,6 +97,18 @@ name();
     display: flex;
     flex-direction: row;
     align-items: center;
+  }
+
+  &__button {
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
   }
 }
 </style>

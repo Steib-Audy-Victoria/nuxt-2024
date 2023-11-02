@@ -1,5 +1,9 @@
 <script setup>
 import MyIconGlobale from "./elements/MyIconGlobale.vue";
+
+import { useGlobalStore } from "@/stores/global.js";
+
+const store = useGlobalStore();
 </script>
 
 <template>
@@ -21,6 +25,9 @@ import MyIconGlobale from "./elements/MyIconGlobale.vue";
       <MyIconGlobale name="Search" background="none" />
       <input type="text" placeholder="Search" />
       <MyIconGlobale background="none" />
+      <div class="Header__count" @click="store.increment()">
+        {{ store.cart }}
+      </div>
     </div>
   </div>
 </template>

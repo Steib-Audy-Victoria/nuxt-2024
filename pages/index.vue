@@ -33,22 +33,51 @@ if (!home.value || error.value) {
     <Information :information="home.data.information" />
 
     <!--Section Recipes-->
-    <div class="p-index__recipes">
-      <div class="p-index__recipe" v-for="recipe in recipes">
-        <RecipeCard
-          v-bind="{
-            id: recipe.recipe_id,
-            title: recipe.recipe_name,
-            description: recipe.recipe_description,
-          }"
-        />
+    <section class="product">
+      <myTitle
+        :title="home.data.product_title"
+        :sub_title="home.data.product_sub_title"
+      />
+      <div class="product__recipes">
+        <div class="product__recipe" v-for="recipe in recipes">
+          <MyBigCardMenu
+            v-bind="{
+              id: recipe.recipe_id,
+              title: recipe.recipe_name,
+              imageSrc: recipe.image_url,
+              imageAlt: recipe.image_alt,
+              price: recipe.price,
+              note: recipe.note,
+            }"
+          />
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Section Recipes
+    <section class="product">
+      <myTitle
+        :title="home.data.product_title"
+        :sub_title="home.data.product_sub_title"
+      />
+      <div class="product__recipes">
+        <div class="product__recipe" v-for="recipe in recipes">
+          <RecipeCard
+            v-bind="{
+              id: recipe.recipe_id,
+              title: recipe.recipe_name,
+              description: recipe.recipe_description,
+            }"
+          />
+        </div>
+      </div>
+    </section> -->
   </div>
 </template>
 
 <style lang="scss">
-.p-index {
+.product {
+  padding-top: rem(50);
   &__recipes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
