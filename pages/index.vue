@@ -72,6 +72,14 @@ if (!home.value || error.value) {
         </div>
       </div>
     </section> -->
+
+    <!-- <section class="services">
+      <myTitle
+        :title="home.data.services_title"
+        :sub_title="home.data.services_sub_title"
+      />
+      <Services :services="home.data.services" />
+    </section> -->
   </div>
 </template>
 
