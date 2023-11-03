@@ -21,40 +21,39 @@ if (!home.value || error.value) {
 </script>
 
 <template>
-  <div class="p-index">
-    <!--Section Hero-->
-    <Hero
-      :title="home.data.hero_title"
-      :text="home.data.hero_text"
-      :buttons="home.data.hero_buttons"
+  <!--Section Hero-->
+  <Hero
+    :title="home.data.hero_title"
+    :text="home.data.hero_text"
+    :buttons="home.data.hero_buttons"
+  />
+
+  <!--Section Information-->
+  <Information :information="home.data.information" />
+
+  <!--Section Recipes-->
+  <section class="product">
+    <myTitle
+      :title="home.data.product_title"
+      :sub_title="home.data.product_sub_title"
     />
-
-    <!--Section Information-->
-    <Information :information="home.data.information" />
-
-    <!--Section Recipes-->
-    <section class="product">
-      <myTitle
-        :title="home.data.product_title"
-        :sub_title="home.data.product_sub_title"
-      />
-      <div class="product__recipes">
-        <div class="product__recipe" v-for="recipe in recipes">
-          <MyBigCardMenu
-            v-bind="{
-              id: recipe.recipe_id,
-              title: recipe.recipe_name,
-              imageSrc: recipe.image_url,
-              imageAlt: recipe.image_alt,
-              price: recipe.price,
-              note: recipe.note,
-            }"
-          />
-        </div>
+    <div class="product__recipes">
+      <div class="product__recipe" v-for="recipe in recipes">
+        <MyBigCardMenu
+          v-bind="{
+            id: recipe.recipe_id,
+            title: recipe.recipe_name,
+            imageSrc: recipe.image_url,
+            imageAlt: recipe.image_alt,
+            price: recipe.price,
+            note: recipe.note,
+          }"
+        />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section Recipes
+  <!-- Section Recipes
     <section class="product">
       <myTitle
         :title="home.data.product_title"
@@ -73,14 +72,20 @@ if (!home.value || error.value) {
       </div>
     </section> -->
 
-    <!-- <section class="services">
-      <myTitle
-        :title="home.data.services_title"
-        :sub_title="home.data.services_sub_title"
-      />
-      <Services :services="home.data.services" />
-    </section> -->
-  </div>
+  <section class="services">
+    <myTitle
+      :title="home.data.services_title"
+      :sub_title="home.data.services_sub_title"
+    />
+    <!-- <Services :services="home.data.services" /> -->
+  </section>
+
+  <section class="work">
+    <myTitle
+      :title="home.data.how_to_work_title"
+      :sub_title="home.data.how_to_work_sub_title"
+    />
+  </section>
 </template>
 
 <style lang="scss">
