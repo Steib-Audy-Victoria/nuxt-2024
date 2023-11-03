@@ -85,6 +85,8 @@ if (!home.value || error.value) {
       :title="home.data.how_to_work_title"
       :sub_title="home.data.how_to_work_sub_title"
     />
+
+    <Work :infos="home.data.how_to_work" />
   </section>
 </template>
 
