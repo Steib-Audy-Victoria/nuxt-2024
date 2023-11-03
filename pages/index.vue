@@ -88,6 +88,14 @@ if (!home.value || error.value) {
 
     <Work :infos="home.data.how_to_work" />
   </section>
+
+  <section class="testimonials">
+    <myTitle
+      :sub_title="home.data.testimonials_sub_title"
+      :title="home.data.testimonials_title"
+    />
+    <Avis />
+  </section>
 </template>
 
 <style lang="scss">
