@@ -96,6 +96,10 @@ if (!home.value || error.value) {
     />
     <Avis />
   </section>
+
+  <section class="Contact">
+    <MyNewsletter />
+  </section>
 </template>
 
 <style lang="scss">
@@ -107,5 +111,13 @@ if (!home.value || error.value) {
     gap: 30px;
     margin-top: 50px;
   }
+}
+
+.Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: rem(30);
+  padding-bottom: rem(50);
 }
 </style>
