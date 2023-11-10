@@ -29,7 +29,9 @@ if (!home.value || error.value) {
   />
 
   <!--Section Information-->
-  <Information :information="home.data.information" />
+  <section class="Information">
+    <Information :information="home.data.information" />
+  </section>
 
   <!--Section Recipes-->
   <section class="product">
@@ -103,21 +105,41 @@ if (!home.value || error.value) {
 </template>
 
 <style lang="scss">
+.Information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: rem(30);
+}
+
 .product {
   padding-top: rem(50);
   &__recipes {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 50px;
   }
 }
 
+.services {
+  padding-top: rem(50);
+}
+
+.work {
+  padding-top: rem(50);
+}
+
+.testimonials {
+  padding-top: rem(50);
+}
+
 .Contact {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: rem(30);
+  padding-top: rem(50);
   padding-bottom: rem(50);
 }
 </style>

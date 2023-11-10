@@ -25,6 +25,11 @@ const props = defineProps({
   display: flex;
   flex-flow: row wrap;
   width: 100%;
+  height: min-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px 0px rgba($gray, 20%);
 
   &__item {
     flex: 1;

@@ -24,6 +24,7 @@ if (!home.value || error.value) {
 
 <style lang="scss" scoped>
 .sectionAvis {
+  margin: rem(20);
   &__content {
     display: flex;
     justify-content: space-between;
@@ -34,6 +35,10 @@ if (!home.value || error.value) {
       width: 45%;
       flex: none;
       display: none;
+    }
+
+    .cardAvis__pp {
+      width: 45%;
     }
   }
 }
