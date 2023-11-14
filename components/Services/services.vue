@@ -9,14 +9,14 @@ const props = defineProps({
     <div v-for="item in services" class="services__item">
       <div class="services__icon">
         <MyIconGlobale
-          v-if="${item.services_icon} === 'Livraison'"
+          v-if="item.services_icon === 'Livraison'"
           name="Livraison"
           background="secondary"
           color="primary"
           size="big"
         />
         <MyIconGlobale
-          v-else-if="${item.services_icon} === 'Repas'"
+          v-else-if="item.services_icon === 'Repas'"
           name="Repas"
           background="secondary"
           color="primary"

@@ -74,12 +74,12 @@ if (!home.value || error.value) {
       </div>
     </section> -->
 
-  <section class="services">
+  <section class="serv">
     <myTitle
       :title="home.data.services_title"
       :sub_title="home.data.services_sub_title"
     />
-    <!-- <Services :services="home.data.services" /> -->
+    <Services :services="home.data.services" />
   </section>
 
   <section class="work">
@@ -123,8 +123,10 @@ if (!home.value || error.value) {
   }
 }
 
-.services {
+.serv {
   padding-top: rem(50);
+  display: flex;
+  flex-direction: column;
 }
 
 .work {
