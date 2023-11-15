@@ -18,6 +18,13 @@ const { data: recipes } = await useAsyncData("recipes", async () => {
 <template>
   <section class="hero">
     <div class="hero__left">
+      <div class="hero__left-delivery">
+        <p>Bike Delivery</p>
+        <img
+          src="../../public/BikeDelivery.jpg"
+          alt="illustration de livraison"
+        />
+      </div>
       <div class="hero__title">
         <!-- Convert prismic rich text field to full html text -->
         <PrismicRichText :field="title" />
@@ -92,6 +99,29 @@ const { data: recipes } = await useAsyncData("recipes", async () => {
     flex-direction: column;
     gap: rem(20);
     max-width: rem(700);
+
+    &-delivery {
+      width: 270px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+      padding: 5px;
+      border-radius: 30px;
+      background: $secondary-color;
+
+      img {
+        width: 54px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 100%;
+      }
+
+      p {
+        color: $primary-color;
+        margin-left: 25px;
+      }
+    }
   }
 
   &__title {
