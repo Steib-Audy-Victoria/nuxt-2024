@@ -23,15 +23,15 @@ const props = defineProps({
   flex: none;
   display: grid;
   place-items: center;
-  gap: 45px;
+  gap: 5px;
   width: 100%;
-  padding: 100px 20px;
+  padding: 60px 20px;
   aspect-ratio: 2/1;
 
   &__personne {
     display: flex;
     align-items: center;
-    gap: 17px;
+    gap: 10px;
     margin: auto;
     width: fit-content;
 

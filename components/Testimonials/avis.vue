@@ -31,14 +31,8 @@ if (!home.value || error.value) {
     align-items: center;
     gap: 45px;
 
-    .sectionAvis__img {
-      width: 45%;
-      flex: none;
-      display: none;
-    }
-
     .cardAvis__pp {
-      width: 45%;
+      width: 50%;
     }
   }
 }

@@ -48,6 +48,13 @@ const props = defineProps({
   flex-direction: row;
   justify-content: center;
   gap: rem(50);
+
+  &___content {
+    &-title {
+      text-align: center;
+    }
+  }
+
   &__item {
     max-width: rem(320);
     min-width: rem(300);

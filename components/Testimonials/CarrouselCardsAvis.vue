@@ -57,7 +57,7 @@ const showPreviousCard = () => {
 <style lang="scss" scoped>
 .carrouselCards {
   position: relative;
-  width: 730px;
+  width: 700px;
 
   .iconFleche {
     position: absolute;
@@ -80,8 +80,12 @@ const showPreviousCard = () => {
     display: flex;
     flex-direction: row-reverse;
     overflow: hidden;
-    max-width: 730px;
+    max-width: 700px;
     min-width: 500px;
+
+    max-height: 500px;
+    min-height: 400px;
+
     box-shadow: 0px 0px 30px 0px rgba($gray, 30%);
     border-radius: 35px;
 
