@@ -29,6 +29,15 @@ const className = computed(() => ({
       fill="primary"
     />
     <slot></slot>
+
+    <MyIconGlobale
+      v-if="icon"
+      class="button-icon"
+      name="Next"
+      size="small"
+      background="white"
+      color="black"
+    />
   </a>
   <button v-else class="button" :class="className">
     <MyIconGlobale
@@ -41,6 +50,15 @@ const className = computed(() => ({
     />
 
     <slot></slot>
+
+    <MyIconGlobale
+      v-if="icon"
+      class="button-icon"
+      name="Next"
+      size="small"
+      background="white"
+      color="black"
+    />
   </button>
 </template>
 

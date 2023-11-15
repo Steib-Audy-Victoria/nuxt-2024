@@ -53,6 +53,9 @@ if (!home.value || error.value) {
         />
       </div>
     </div>
+    <div class="product__btn">
+      <MyButton variant="rounded" icon="true"> See More Product </MyButton>
+    </div>
   </section>
 
   <!-- Section Recipes
@@ -119,6 +122,13 @@ if (!home.value || error.value) {
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-top: 50px;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 50px;
   }
 }
