@@ -6,7 +6,7 @@ import MyButton from "./elements/MyButton.vue";
   <div class="Newsletter">
     <img
       class="Newsletter__img"
-      src="../../public/burger_sandwich.png"
+      src="../public/burger_sandwich.png"
       alt="Burger"
     />
 
