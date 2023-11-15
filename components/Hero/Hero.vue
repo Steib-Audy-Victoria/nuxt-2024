@@ -148,6 +148,7 @@ const { data: recipes } = await useAsyncData("recipes", async () => {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    gap: 5rem;
     &:not(:first-child) {
       margin-top: 2rem;
     }

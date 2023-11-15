@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from "vue";
-
 const props = defineProps({
   href: String,
   size: String,
   variant: String,
+  icon: String,
 });
 
 /* J'ai corrigé cette partie après le cours avec une gestion des classes beaucoup plus simple. 
@@ -12,14 +12,34 @@ J'avais oublié qu'on pouvait mettre des objets dans le className */
 
 const className = computed(() => ({
   " -rounded": props.variant === "rounded",
+  " -video": props.variant === "video",
   " -small": props.size === "small",
+  " -icon": props.icon === "true",
 }));
 </script>
+
 <template>
   <a v-if="href" :href="href" class="button" :class="className">
+    <MyIconGlobale
+      v-if="variant === 'video'"
+      name="Play"
+      size="big"
+      background="white"
+      color="primary"
+      fill="primary"
+    />
     <slot></slot>
   </a>
   <button v-else class="button" :class="className">
+    <MyIconGlobale
+      v-if="variant === 'video'"
+      name="Play"
+      size="big"
+      background="white"
+      color="primary"
+      fill="primary"
+    />
+
     <slot></slot>
   </button>
 </template>
@@ -45,6 +65,26 @@ const className = computed(() => ({
     border-radius: rem(37);
     font-weight: 500;
     padding: rem(26) rem(64);
+  }
+
+  &.-video {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    background: transparent;
+    color: $black;
+    box-shadow: none;
+  }
+
+  &.-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
   }
 
   &.-small {
